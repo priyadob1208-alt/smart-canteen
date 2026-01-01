@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Canteen App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f9; color: #333; }
+    h1, h2 { text-align: center; color: #2c3e50; }
+    form { background: #fff; padding: 20px; border-radius: 10px; max-width: 400px; margin: 0 auto 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+    label { display: block; margin-top: 10px; font-weight: bold; }
+    input, select { width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
+    button { margin-top: 15px; padding: 10px 15px; border: none; border-radius: 5px; background: #3498db; color: #fff; cursor: pointer; font-size: 16px; }
+    button:hover { background: #2980b9; }
+    ul { list-style: none; padding: 0; max-width: 700px; margin: 0 auto; }
+    li { background: #fff; padding: 10px; margin-bottom: 10px; border-radius: 5px; box-shadow: 0 1px 5px rgba(0,0,0,0.1); display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; }
+    li button { margin-top: 5px; background: #27ae60; }
+    li button:hover { background: #1e8449; }
+    @media(max-width: 500px){
+      form, ul { width: 95%; }
+      li { flex-direction: column; align-items: flex-start; }
+      li button { align-self: flex-end; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Smart Canteen Pre-Order</h1>
+
+  <form id="orderForm">
+    <label>Item:</label>
+    <select id="item">
+      <option value="Veg Puff">Veg Puff</option>
+      <option value="Cheese Sandwich">Cheese Sandwich</option>
+      <option value="Juice">Juice</option>
+      <option value="Snacks">Snacks</option>
+    </select>
+
+    <label>Quantity:</label>
+    <input type="number" id="quantity" value="1" min="1">
+
+    <label>Pickup Time:</label>
+    <input type="time" id="pickupTime">
+
+    <label>Payment Mode:</label>
+    <select id="paymentMode">
+      <option value="GPay">GPay</option>
+      <option value="PhonePe">PhonePe</option>
+      <option value="Cash">Cash</option>
+    </select>
+
+    <button type="submit">Place Order</button>
+  </form>
+
+  <h2>Orders List</h2>
+  <ul id="ordersList"></ul>
+
+  <!-- jsPDF CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
